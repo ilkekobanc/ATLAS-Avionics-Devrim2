@@ -1,0 +1,4 @@
+/DEV:Serial/Modem@[1]/dev/cu.usbmodem14301:57600-7N1|331|250<Standard.zat>
+/EMU:Xterm
+/O:Standard.zoc
+/CONNECT=localhost
