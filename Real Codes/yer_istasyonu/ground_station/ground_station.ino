@@ -6,7 +6,7 @@ bool isMessage = false;
 
 
 void setup() {
-  Serial.begin(57600);
+  Serial.begin(115200);
   xbee.begin(9600);
 }
 
