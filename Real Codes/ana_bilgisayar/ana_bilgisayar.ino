@@ -27,6 +27,7 @@ void setup() {
   ps.enableDefault();
   mma.begin();
   mma.setRange(MMA8451_RANGE_2_G);
+  delay(3000);
 }
 
 void loop() {
@@ -47,22 +48,11 @@ void loop() {
   xbee_t1.print("\t");
   xbee_t1.print(altitude);
   xbee_t1.print("\t");
-  xbee_t1.print(temperature);
-  xbee_t1.print("\t");
-  xbee_t1.print(gps.location.lat(), 10);
-  xbee_t1.print("\t");
-  xbee_t1.print(gps.location.lng(), 10);
-  xbee_t1.print("\t");
-  xbee_t1.print(gps.altitude.meters());
-  xbee_t1.print("\t");
-  xbee_t1.print(gps.speed.kmph());
-  xbee_t1.print("\t");
-  xbee_t1.print(event.acceleration.x);
-  xbee_t1.print("\t");
-  xbee_t1.print(event.acceleration.y);
-  xbee_t1.print("\t");
-  xbee_t1.println(event.acceleration.z);
+  xbee_t1.println(event.acceleration.x * event.acceleration.x +
+                 event.acceleration.y * event.acceleration.y +
+                 event.acceleration.z * event.acceleration.z);
   xbee_t1.print('!');
+
   smartDelay(100);
 }
 
